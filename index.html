@@ -42,7 +42,6 @@
     html[dir="ltr"] body { font-family: 'Inter', 'Cairo', sans-serif; }
     .font-display { font-family: 'Cinzel', 'Cairo', serif; letter-spacing: 0.08em; }
 
-    /* شاشة الترحيب المتحركة */
     #splash-screen {
       position: fixed;
       inset: 0;
@@ -75,12 +74,11 @@
       to { transform: scale(1.03); filter: brightness(1.15); }
     }
 
-    /* الشريط العلوي */
     header.topbar {
       position: sticky;
       top: 0;
       z-index: 500;
-      background: rgba(8, 8, 11, 0.9);
+      background: rgba(8, 8, 11, 0.92);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border-subtle);
     }
@@ -123,13 +121,11 @@
       gap: 0.35rem;
       flex-wrap: wrap;
     }
-    .nav-links a,
     .nav-links button.nav-item-btn {
       color: var(--silver);
       background: transparent;
       border: 1px solid transparent;
       font-family: inherit;
-      text-decoration: none;
       font-size: 0.84rem;
       font-weight: 600;
       padding: 0.38rem 0.62rem;
@@ -138,7 +134,6 @@
       cursor: pointer;
       transition: var(--transition);
     }
-    .nav-links a:hover,
     .nav-links button.nav-item-btn:hover,
     .nav-links button.nav-item-btn.active {
       color: var(--gold-light);
@@ -148,7 +143,6 @@
 
     .nav-actions { display: flex; align-items: center; gap: 0.45rem; flex-shrink: 0; }
 
-    /* زر الثلاث نقاط للموبايل */
     #dots-menu-btn {
       display: none;
       width: 36px;
@@ -191,7 +185,6 @@
       .nav-actions .btn-sm { padding: 0.35rem 0.55rem; font-size: 0.76rem; }
     }
 
-    /* الأزرار */
     .btn {
       display: inline-flex;
       align-items: center;
@@ -233,11 +226,10 @@
     }
     .btn-sm { padding: 0.35rem 0.65rem; font-size: 0.78rem; border-radius: 8px; }
 
-    /* Hero */
     .hero {
       max-width: 1360px;
       margin: 0 auto;
-      padding: 3rem 1rem 2rem;
+      padding: 2.6rem 1rem 1.8rem;
       text-align: center;
     }
     .hero-tag {
@@ -276,7 +268,6 @@
     }
     .hero-cta { display: flex; justify-content: center; gap: 0.75rem; flex-wrap: wrap; }
 
-    /* الأقسام وشبكات العرض */
     main { max-width: 1360px; margin: 0 auto; padding: 0 1rem 4rem; }
 
     .focus-bar {
@@ -297,7 +288,6 @@
       padding: 2rem 0;
       border-top: 1px solid rgba(255, 255, 255, 0.06);
     }
-    /* عند اختيار خانة واحدة يتم إخفاء بقية الأقسام */
     body.single-section-mode section.block:not(.active-section) {
       display: none !important;
     }
@@ -365,7 +355,6 @@
       font-size: 0.92rem;
     }
 
-    /* نماذج وحقول */
     .form-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -385,7 +374,6 @@
     input:focus, select:focus, textarea:focus { outline: none; border-color: var(--gold); }
     textarea { min-height: 90px; resize: vertical; }
 
-    /* حساب العضو */
     .profile-box { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; margin-bottom: 1.2rem; }
     .avatar {
       width: 68px;
@@ -396,10 +384,9 @@
       background: var(--bg-elevated);
     }
 
-    /* لوحة الإدارة */
     #admin-panel {
       display: none;
-      margin-top: 2rem;
+      margin-top: 1.5rem;
       background: #0b0b0f;
       border: 1px solid var(--gold);
       border-radius: 18px;
@@ -442,7 +429,6 @@
     }
     th { color: var(--gold-light); font-weight: 800; background: rgba(255, 255, 255, 0.02); }
 
-    /* وضع الصيانة */
     #maintenance-overlay {
       display: none;
       position: fixed;
@@ -459,7 +445,6 @@
     }
     #maintenance-overlay.active { display: flex; }
 
-    /* الإشعارات */
     #toast-container {
       position: fixed;
       bottom: 1rem;
@@ -491,13 +476,11 @@
   </style>
 </head>
 <body>
-  <!-- شاشة الترحيب المتحركة -->
   <div id="splash-screen">
     <div class="splash-logo">OUTLAW RP</div>
     <div class="splash-slogan">YOUR STORY. YOUR RULES.</div>
   </div>
 
-  <!-- غلاف وضع الصيانة للأعضاء والزوار -->
   <div id="maintenance-overlay">
     <div class="font-display" style="font-size: 2rem; color: var(--gold);">OUTLAW RP</div>
     <h2 id="maint-title">الموقع في وضع الصيانة حالياً</h2>
@@ -508,10 +491,8 @@
     </div>
   </div>
 
-  <!-- حاوية الإشعارات -->
   <div id="toast-container" aria-live="polite"></div>
 
-  <!-- الشريط العلوي -->
   <header class="topbar">
     <div class="nav-wrap">
       <a href="#top" class="brand" id="brand-home-link">
@@ -543,7 +524,6 @@
     </div>
   </header>
 
-  <!-- Hero -->
   <section class="hero" id="top">
     <div class="hero-tag" id="hero-status-tag">OUTLAW ROLEPLAY PLATFORM</div>
     <h1 id="site-name-hero">OUTLAW RP</h1>
@@ -559,7 +539,6 @@
   </section>
 
   <main>
-    <!-- شريط حالة عرض الخانة المختارة -->
     <div class="focus-bar" id="focus-bar" style="display:none;">
       <div>
         <span style="color:var(--text-muted);">الخانة المعروضة حالياً:</span>
@@ -568,7 +547,6 @@
       <button type="button" class="btn btn-ghost btn-sm" id="show-all-sections-btn">عرض جميع الأقسام</button>
     </div>
 
-    <!-- نبذة عن السيرفر -->
     <section class="block" id="about" data-section-name-ar="نبذة عن السيرفر" data-section-name-en="About Server">
       <div class="sec-head">
         <h2 class="sec-title" data-i18n="sec_about">نبذة عن السيرفر</h2>
@@ -581,7 +559,6 @@
       </div>
     </section>
 
-    <!-- روابط الديسكورد والقنوات الرسمية -->
     <section class="block" id="links" data-section-name-ar="الروابط والقنوات الرسمية" data-section-name-en="Links & Channels">
       <div class="sec-head">
         <h2 class="sec-title" data-i18n="sec_links">روابط الديسكورد والقنوات الرسمية</h2>
@@ -593,7 +570,6 @@
       </div>
     </section>
 
-    <!-- قائمة الإدارة -->
     <section class="block" id="staff" data-section-name-ar="قائمة الإدارة" data-section-name-en="Staff Team">
       <div class="sec-head">
         <h2 class="sec-title" data-i18n="sec_staff">قائمة الإدارة</h2>
@@ -601,7 +577,6 @@
       <div class="grid" id="staff-grid"></div>
     </section>
 
-    <!-- المطورون والمصممون -->
     <section class="block" id="creators" data-section-name-ar="المطورون والمصممون" data-section-name-en="Developers & Designers">
       <div class="sec-head">
         <h2 class="sec-title" data-i18n="sec_creators">المطورون والمصممون</h2>
@@ -609,7 +584,6 @@
       <div class="grid" id="creators-grid"></div>
     </section>
 
-    <!-- الستريمرز -->
     <section class="block" id="streamers" data-section-name-ar="الستريمرز" data-section-name-en="Streamers">
       <div class="sec-head">
         <h2 class="sec-title" data-i18n="sec_streamers">الستريمرز</h2>
@@ -617,7 +591,6 @@
       <div class="grid" id="streamers-grid"></div>
     </section>
 
-    <!-- البثوث المباشرة -->
     <section class="block" id="live" data-section-name-ar="البثوث المباشرة" data-section-name-en="Live Streams">
       <div class="sec-head">
         <h2 class="sec-title" data-i18n="sec_live">البثوث المباشرة</h2>
@@ -625,7 +598,6 @@
       <div class="grid" id="live-grid"></div>
     </section>
 
-    <!-- الفعاليات -->
     <section class="block" id="events" data-section-name-ar="الفعاليات" data-section-name-en="Events">
       <div class="sec-head">
         <h2 class="sec-title" data-i18n="sec_events">الفعاليات</h2>
@@ -633,7 +605,6 @@
       <div class="grid" id="events-grid"></div>
     </section>
 
-    <!-- التقديمات وإرسال الطلبات -->
     <section class="block" id="apply" data-section-name-ar="التقديمات والطلبات" data-section-name-en="Applications">
       <div class="sec-head">
         <h2 class="sec-title" data-i18n="sec_apply">التقديمات والطلبات</h2>
@@ -673,7 +644,6 @@
       </div>
     </section>
 
-    <!-- متجر السيرفر -->
     <section class="block" id="store" data-section-name-ar="متجر السيرفر" data-section-name-en="Server Store">
       <div class="sec-head">
         <h2 class="sec-title" data-i18n="sec_store">متجر السيرفر</h2>
@@ -681,7 +651,6 @@
       <div class="grid" id="store-grid"></div>
     </section>
 
-    <!-- الإعلانات -->
     <section class="block" id="announcements" data-section-name-ar="الإعلانات" data-section-name-en="Announcements">
       <div class="sec-head">
         <h2 class="sec-title" data-i18n="sec_ann">الإعلانات</h2>
@@ -689,7 +658,6 @@
       <div class="grid" id="announcements-grid"></div>
     </section>
 
-    <!-- حساب العضو -->
     <section class="block" id="account" data-section-name-ar="حساب العضو" data-section-name-en="Member Account">
       <div class="sec-head">
         <h2 class="sec-title" data-i18n="sec_account">حساب العضو</h2>
@@ -750,7 +718,6 @@
       </div>
     </section>
 
-    <!-- لوحة إدارة السيرفر (تظهر للمالك والإداريين المصرح لهم فقط) -->
     <section id="admin-panel">
       <div class="sec-head">
         <h2 class="sec-title">لوحة إدارة OUTLAW RP</h2>
@@ -790,6 +757,8 @@
       getAuth,
       GoogleAuthProvider,
       signInWithPopup,
+      signInWithRedirect,
+      getRedirectResult,
       signOut,
       onAuthStateChanged
     } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
@@ -808,7 +777,6 @@
       serverTimestamp
     } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
-    // إعدادات Firebase الخاصة بالمشروع الحالي rt-vote-7e732
     const firebaseConfig = {
       apiKey: "AIzaSyDW-BVcCz8NdinlJHJvNXyuy0A-SQnZlYo",
       authDomain: "rt-vote-7e732.firebaseapp.com",
@@ -829,7 +797,7 @@
 
     const state = {
       lang: localStorage.getItem("outlaw_lang") || "ar",
-      selectedSectionId: null, // null = عرض الكل، أو معرف القسم لعرضه وحده
+      selectedSectionId: null,
       user: null,
       userProfile: null,
       isPrimaryOwner: false,
@@ -837,6 +805,7 @@
       isOwner: false,
       isStaff: false,
       activeAdminTab: "overview",
+      userUnsub: null,
       cache: {
         users: [],
         staff: [],
@@ -861,7 +830,7 @@
       el.className = "toast" + (isError ? " error" : "");
       el.textContent = message;
       box.appendChild(el);
-      setTimeout(() => el.remove(), 4200);
+      setTimeout(() => el.remove(), 5000);
     }
 
     function esc(str) {
@@ -872,7 +841,7 @@
         .replace(/"/g, "&quot;");
     }
 
-    // إدارة قائمة الثلاث نقاط (⋮) وإظهار الخانة المختارة فقط
+    // قائمة الثلاث نقاط وإظهار الخانة المختارة فقط
     const dotsBtn = document.getElementById("dots-menu-btn");
     const navLinksEl = document.getElementById("nav-links");
     const focusBarEl = document.getElementById("focus-bar");
@@ -1041,11 +1010,24 @@
     });
     applyLanguage(state.lang);
 
+    // معالجة عودة تسجيل الدخول عبر Redirect إن حدثت
+    getRedirectResult(auth).catch((err) => {
+      if (err && err.code) {
+        notify("تعذر إكمال تسجيل الدخول عبر Google: " + err.code, true);
+      }
+    });
+
     async function loginGoogle() {
       try {
         await signInWithPopup(auth, googleProvider);
-        notify("تم تسجيل الدخول بنجاح عبر Google.");
       } catch (err) {
+        if (
+          err.code === "auth/popup-blocked" ||
+          err.code === "auth/operation-not-supported-in-this-environment"
+        ) {
+          await signInWithRedirect(auth, googleProvider);
+          return;
+        }
         let msg = "تعذر تسجيل الدخول عبر Google.";
         if (err.code === "auth/popup-closed-by-user") msg = "تم إغلاق نافذة تسجيل الدخول قبل إتمام العملية.";
         else if (err.code === "auth/network-request-failed") msg = "تحقق من اتصال الإنترنت ثم أعد المحاولة.";
@@ -1070,7 +1052,13 @@
     document.getElementById("acc-logout-btn").addEventListener("click", logoutGoogle);
     document.getElementById("maint-logout-btn").addEventListener("click", logoutGoogle);
 
+    // مراقبة حالة تسجيل الدخول وإظهار الحساب ولوحة الإدارة فوراً
     onAuthStateChanged(auth, async (user) => {
+      if (state.userUnsub) {
+        state.userUnsub();
+        state.userUnsub = null;
+      }
+
       state.user = user || null;
       const loginBtn = document.getElementById("auth-login-btn");
       const logoutBtn = document.getElementById("auth-logout-btn");
@@ -1099,44 +1087,78 @@
       logoutBtn.style.display = "inline-flex";
       maintLogout.style.display = "inline-flex";
 
-      const emailLower = (user.email || "").toLowerCase();
+      const emailLower = (user.email || "").trim().toLowerCase();
       state.isPrimaryOwner = emailLower === PRIMARY_OWNER_EMAIL.toLowerCase();
 
-      const userRef = doc(db, "outlaw_users", user.uid);
-      const snap = await getDoc(userRef);
+      // تجهيز ملف مبدئي فوراً من Google حتى يفتح الحساب ولوحة الإدارة بدون تأخير أو حظر
+      state.userProfile = {
+        id: user.uid,
+        uid: user.uid,
+        displayName: user.displayName || "عضو OUTLAW RP",
+        email: user.email || "",
+        photoURL: user.photoURL || "",
+        role: state.isPrimaryOwner ? "المالك الأساسي" : "عضو",
+        bio: ""
+      };
 
-      if (!snap.exists()) {
-        const initialRole = state.isPrimaryOwner ? "المالك الأساسي" : "عضو";
-        await setDoc(userRef, {
-          uid: user.uid,
-          displayName: user.displayName || "عضو OUTLAW RP",
-          email: user.email || "",
-          photoURL: user.photoURL || "",
-          role: initialRole,
-          bio: "",
-          createdAt: serverTimestamp(),
-          lastLoginAt: serverTimestamp()
-        });
-      } else {
-        const patch = {
-          email: user.email || snap.data().email || "",
-          photoURL: user.photoURL || snap.data().photoURL || "",
-          lastLoginAt: serverTimestamp()
-        };
-        if (state.isPrimaryOwner && snap.data().role !== "المالك الأساسي") {
-          patch.role = "المالك الأساسي";
+      await evaluatePermissions();
+      renderAccountSection();
+      renderMyApplications();
+      evaluateMaintenance();
+
+      // إظهار قسم الحساب مباشرة بعد تسجيل الدخول إذا لم يكن المستخدم داخل لوحة الإدارة
+      selectSectionOnly("account");
+      notify(`مرحباً ${state.userProfile.displayName}`);
+
+      // مزامنة وحفظ البيانات في outlaw_users مع معالجة أي رفض قواعد Firestore بوضوح
+      try {
+        const userRef = doc(db, "outlaw_users", user.uid);
+        const snap = await getDoc(userRef);
+
+        if (!snap.exists()) {
+          const initialRole = state.isPrimaryOwner ? "المالك الأساسي" : "عضو";
+          await setDoc(userRef, {
+            uid: user.uid,
+            displayName: user.displayName || "عضو OUTLAW RP",
+            email: user.email || "",
+            photoURL: user.photoURL || "",
+            role: initialRole,
+            bio: "",
+            createdAt: serverTimestamp(),
+            lastLoginAt: serverTimestamp()
+          });
+        } else {
+          const patch = {
+            email: user.email || snap.data().email || "",
+            photoURL: user.photoURL || snap.data().photoURL || "",
+            lastLoginAt: serverTimestamp()
+          };
+          if (state.isPrimaryOwner && snap.data().role !== "المالك الأساسي") {
+            patch.role = "المالك الأساسي";
+          }
+          await updateDoc(userRef, patch);
         }
-        await updateDoc(userRef, patch);
-      }
 
-      onSnapshot(userRef, async (uSnap) => {
-        if (!uSnap.exists()) return;
-        state.userProfile = { id: uSnap.id, ...uSnap.data() };
-        await evaluatePermissions();
-        renderAccountSection();
-        renderMyApplications();
-        evaluateMaintenance();
-      });
+        state.userUnsub = onSnapshot(
+          userRef,
+          async (uSnap) => {
+            if (!uSnap.exists()) return;
+            state.userProfile = { id: uSnap.id, ...uSnap.data() };
+            await evaluatePermissions();
+            renderAccountSection();
+            renderMyApplications();
+            evaluateMaintenance();
+          },
+          (err) => {
+            console.warn("User snapshot warning:", err.message);
+          }
+        );
+      } catch (err) {
+        console.error("Firestore outlaw_users error:", err);
+        if (err.code === "permission-denied") {
+          notify("تنبيه: يجب نشر قواعد Firestore Security Rules الخاصة بمجموعات outlaw_* في مشروع rt-vote-7e732.", true);
+        }
+      }
     });
 
     async function evaluatePermissions() {
@@ -1147,7 +1169,7 @@
         state.isStaff = false;
         return;
       }
-      const emailLower = (state.user.email || "").toLowerCase();
+      const emailLower = (state.user.email || "").trim().toLowerCase();
       state.isPrimaryOwner = emailLower === PRIMARY_OWNER_EMAIL.toLowerCase();
 
       let extraOwnerFound = false;
@@ -1157,7 +1179,7 @@
       } catch (_) {}
       if (!extraOwnerFound) {
         extraOwnerFound = state.cache.owners.some(
-          (o) => (o.email || "").toLowerCase() === emailLower && o.active !== false
+          (o) => (o.email || "").trim().toLowerCase() === emailLower && o.active !== false
         );
       }
       state.isExtraOwner = extraOwnerFound;
@@ -1166,7 +1188,7 @@
       const staffFound = state.cache.staff.some(
         (s) =>
           (s.uid && s.uid === state.user.uid) ||
-          ((s.email || "").toLowerCase() === emailLower && emailLower !== "")
+          ((s.email || "").trim().toLowerCase() === emailLower && emailLower !== "")
       );
       state.isStaff = state.isOwner || staffFound;
 
@@ -1209,7 +1231,7 @@
       loggedIn.style.display = "block";
 
       const p = state.userProfile;
-      document.getElementById("acc-photo").src = p.photoURL || "";
+      document.getElementById("acc-photo").src = p.photoURL || state.user.photoURL || "";
       document.getElementById("acc-name").textContent = p.displayName || state.user.displayName || "عضو";
       document.getElementById("acc-email").textContent = p.email || state.user.email || "";
       document.getElementById("acc-role").textContent = state.isPrimaryOwner
@@ -1233,11 +1255,17 @@
       if (!displayName) return notify("الاسم المعروض مطلوب.", true);
 
       try {
-        await updateDoc(doc(db, "outlaw_users", state.user.uid), {
-          displayName,
-          bio,
-          updatedAt: serverTimestamp()
-        });
+        await setDoc(
+          doc(db, "outlaw_users", state.user.uid),
+          {
+            uid: state.user.uid,
+            email: state.user.email || "",
+            displayName,
+            bio,
+            updatedAt: serverTimestamp()
+          },
+          { merge: true }
+        );
         notify("تم تحديث معلومات ملفك الشخصي.");
       } catch {
         notify("تعذر تحديث الملف الشخصي.", true);
@@ -1283,7 +1311,7 @@
         e.target.reset();
         notify("تم إرسال طلبك بنجاح وسيتم مراجعته من الإدارة.");
       } catch {
-        notify("تعذر إرسال الطلب. تحقق من الصلاحيات أو الاتصال.", true);
+        notify("تعذر إرسال الطلب. تأكد من نشر قواعد Firestore Security Rules.", true);
       } finally {
         btn.disabled = false;
       }
@@ -1980,7 +2008,7 @@
           e.target.reset();
           notify("تمت الإضافة بنجاح.");
         } catch {
-          notify("تعذر الإضافة. تحقق من صلاحياتك.", true);
+          notify("تعذر الإضافة. تأكد من نشر قواعد Firestore Security Rules.", true);
         }
       });
 
